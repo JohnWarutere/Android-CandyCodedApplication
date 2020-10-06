@@ -1,8 +1,10 @@
 package com.pluralsight.candycoded;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
@@ -21,11 +23,35 @@ public class InfoActivity extends AppCompatActivity {
                 into(candyStoreImageView);
 
 
+
     }
+
+
 
     // ***
     // TODO - Task 2 - Launch the Google Maps Activity
     // ***
+
+ /*   public void createMapIntent(View view) {
+// create uri
+        Uri address = Uri.parse("geo:0,0?q=618 E South St OrLando, FL 32801");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, address);
+        mapIntent.setPackage("com.google.android.apps.maps");
+
+        if (mapIntent.resolveActivity(getPackageManager())!=null){
+            startActivity(mapIntent);
+        }
+    }*/
+
+    public void createMapIntent(View view){
+        Uri uriAddress = Uri.parse("geo:0,0?q=618 E South St OrLando, FL 32801");
+        Intent mapItent =new Intent(Intent.ACTION_VIEW, uriAddress);
+        mapItent.setPackage("com.google.android.apps.maps");
+        if (mapItent.resolveActivity(getPackageManager()) !=null){
+            startActivity(mapItent);
+        }
+
+    }
 
     // ***
     // TODO - Task 3 - Launch the Phone Activity
