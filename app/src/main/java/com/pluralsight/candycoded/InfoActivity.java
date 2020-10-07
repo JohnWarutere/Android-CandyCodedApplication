@@ -44,11 +44,17 @@ public class InfoActivity extends AppCompatActivity {
     }*/
 
     public void createMapIntent(View view){
-        Uri uriAddress = Uri.parse("geo:0,0?q=618 E South St OrLando, FL 32801");
-        Intent mapItent =new Intent(Intent.ACTION_VIEW, uriAddress);
-        mapItent.setPackage("com.google.android.apps.maps");
-        if (mapItent.resolveActivity(getPackageManager()) !=null){
-            startActivity(mapItent);
+        //create uri address
+        Uri uriAddress = Uri.parse("geo:0,0?q=618 E South St Orlando, FL 32801");
+
+        //create map intent
+        Intent mapIntent  =new Intent(Intent.ACTION_VIEW, uriAddress);
+        //set package
+        mapIntent.setPackage("com.google.android.apps.maps");
+
+            //create handler
+        if (mapIntent.resolveActivity(getPackageManager()) !=null){
+            startActivity(mapIntent);
         }
 
     }
